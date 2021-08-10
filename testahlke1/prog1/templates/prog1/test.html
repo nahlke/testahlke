@@ -1,1 +1,10 @@
-<h1>{{ name }} ist {{ alter }} Jahre alt</h1>
+{% extends "index.html" %}
+{% block content %}
+    <h1>{{ name }} ist {{ alter }} Jahre alt</h1><br>
+    <form action="create-user" method="post">
+        {% csrf_token %}
+        {{ person_form.as_p }}
+        <button type="submit" class="btn btn-danger">Form bestätigen</button>
+        <a href="{% url "user_list" %}" class="btn btn-primary btn-lg" tabindex="-1" role="button" aria-disabled="true">Zeige User Liste</a>
+    </form>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+{% block content %}
+    <ul>
+        {% for user in users %}
+                <li>{{ user.name }} ist {{ user.alter }} Jahre alt</li>
+        {% endfor %}
+    </ul>
+    <br>
+    <ul>
+        {% for user in filtered %}
+                <li>{{ user.name }} ist {{ user.alter }} Jahre alt</li>
+        {% endfor %}
+    </ul>
+    <ul>
+        {% for drinks in drink %}
+            <div class="card p-3 m-3">
+              <div class="card-header">
+                {{ drinks.strDrink }}
+              </div>
+              <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                  <p>{{ drinks.strInstructions }}</p>
+                  <footer class="blockquote-footer">Someone famous in <cite title="Source Title">{{ drinks.strAlcoholic }}</cite></footer>
+                </blockquote>
+              </div>
+            </div>
+        {% endfor %}
+    </ul>
+{% endblock %}
