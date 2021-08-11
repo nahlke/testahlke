@@ -4,7 +4,13 @@
     <form action="create-user" method="post">
         {% csrf_token %}
         {{ person_form.as_p }}
-        <button type="submit" class="btn btn-danger">Form bestätigen</button>
+        <button type="submit" class="btn btn-danger">User bestätigen</button>
         <a href="{% url "user_list" %}" class="btn btn-primary btn-lg" tabindex="-1" role="button" aria-disabled="true">Zeige User Liste</a>
+    </form>
+<br>
+    <form enctype="multipart/form-data" action="artikel" method="post">
+        {% csrf_token %}
+        {{ artikel_form.as_p }}
+        <button type="submit" class="btn btn-danger">Artickel bestätigen</button>
     </form>
 {% endblock %}

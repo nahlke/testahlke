@@ -1,9 +1,10 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from prog1.forms import Person
-from prog1.models import PersonModel
+from prog1.forms import Person, ArtikelForm
+from prog1.models import PersonModel, Artikel
 import requests
 from prog1.api import CocktailApi
+from django.views.generic.list import ListView
 
 
 def home(request):
@@ -12,6 +13,7 @@ def home(request):
 def test(request):
     context = {'name':'otto','alter':24}
     context["person_form"] = Person()
+    context["artikel_form"] = ArtikelForm()
     return render(request, "prog1/test.html", context)
 
 def createPerson(request):
@@ -28,3 +30,16 @@ def user_list(request):
     context = {"users":users, "filtered":filter_users, "drink":cocktails.get_cocktails("margarita")}
     return render(request, "prog1/db_table.html", context)
 
+def artikel(request):
+    new_artikel = ArtikelForm(request.POST, request.FILES)
+    if new_artikel.is_valid():
+        value = new_artikel.cleaned_data
+        artikel = Artikel(value)
+        artikel.save()
+        return HttpResponse("Artikel wurde erstellt")
+    else:
+        print("Fehler")
+        return HttpResponse("Fehler" + str(new_artikel.errors))
+
+class ArtikelListView(ListView):
+    model = Artikel

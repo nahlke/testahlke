@@ -1,0 +1,8 @@
+{% extends "index.html" %}
+{% block content %}
+    <ul>
+        {% for artikel in object_list %}
+            <li>{{ artikel.artikelnummer }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
