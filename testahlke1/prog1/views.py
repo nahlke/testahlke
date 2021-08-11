@@ -15,7 +15,7 @@ def test(request):
     context["person_form"] = Person()
     context["artikel_form"] = ArtikelForm()
     return render(request, "prog1/test.html", context)
-
+#sdsdsd
 def createPerson(request):
     post_name = request.POST.get("name")
     post_alter = request.POST.get("alter")
