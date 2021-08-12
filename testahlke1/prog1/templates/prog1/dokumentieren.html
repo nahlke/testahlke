@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+{% block content %}
+    <center>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Was möchten sie Dokumentie
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="{% url "django-dok" %}">Django</a></li>
+            <li><a class="dropdown-item" href="{% url "models-dok" %}">Models</a></li>
+            <li><a class="dropdown-item" href="{% url "templates-dok" %}">Templates</a></li>
+            <li><a class="dropdown-item" href="{% url "admin-dok" %}">Admin</a></li>
+            <li><a class="dropdown-item" href="{% url "api-dok" %}">Api</a></li>
+            <li><a class="dropdown-item" href="{% url "forms-dok" %}">Forms</a></li>
+            <li><a class="dropdown-item" href="{% url "appurl-dok" %}">App URLs</a></li>
+            <li><a class="dropdown-item" href="{% url "views-dok" %}">Views</a></li>
+            <li><a class="dropdown-item" href="{% url "settings-dok" %}">Settings</a></li>
+            <li><a class="dropdown-item" href="{% url "haupturl-dok" %}">Haupt URLs</a></li>
+            <li><a class="dropdown-item" href="{% url "github-dok" %}">GitHub</a></li>
+            <li><a class="dropdown-item" href="{% url "sonstiges-dok" %}">Sonstiges</a></li>
+          </ul>
+        </div>
+    </center>
+{% endblock %}
+

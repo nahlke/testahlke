@@ -11,16 +11,38 @@ class Artikel(models.Model):
     lieverantenummer = models.CharField(max_length=18)
     img = models.FileField(upload_to="uploads")
 
-class DokumentationModel(models.Model):
-    djangodokumation  = models.CharField(max_length = 500, null=True, blank=True)
-    modelsdokumation  = models.CharField(max_length = 500, null=True, blank=True)
-    templatesdokumation  = models.CharField(max_length = 500, null=True, blank=True)
-    admindokumation  = models.CharField(max_length = 500, null=True, blank=True)
-    apidokumation  = models.CharField(max_length = 500, null=True, blank=True)
-    formsdokumation  = models.CharField(max_length = 500, null=True, blank=True)
-    appUrldokumation  = models.CharField(max_length = 500, null=True, blank=True)
-    viewsdokumation  = models.CharField(max_length = 500, null=True, blank=True)
-    settingsdokumation  = models.CharField(max_length = 500, null=True, blank=True)
-    hauptUrldokumation  = models.CharField(max_length = 500, null=True, blank=True)
-    sonstigesdokumation  = models.CharField(max_length = 500, null=True, blank=True)
-    githubdokumation = models.CharField(max_length = 500, null=True, blank=True)
+class DjangoModel(models.Model):
+    djangoDok = models.TextField(max_length = 500, null=True, blank=True)
+
+class ModelsModel(models.Model):
+    modelsDok = models.TextField(max_length = 500, null=True, blank=True)
+
+class TemplatesModel(models.Model):
+    templatesDok = models.TextField(max_length = 500, null=True, blank=True)
+
+class AdminModel(models.Model):
+    adminDok = models.TextField(max_length = 500, null=True, blank=True)
+
+class ApiModel(models.Model):
+    apiDok = models.TextField(max_length = 500, null=True, blank=True)
+
+class FormsModel(models.Model):
+    formsDok  = models.TextField(max_length = 500, null=True, blank=True)
+
+class AppUrlModel(models.Model):
+    appUrlDok  = models.TextField(max_length = 500, null=True, blank=True)
+
+class ViewsModel(models.Model):
+    viewsDok  = models.TextField(max_length = 500, null=True, blank=True)
+
+class SettingsModel(models.Model):
+    settingsDok  = models.TextField(max_length = 500, null=True, blank=True)
+
+class HauptUrlModel(models.Model):
+    hauptUrlDok  = models.TextField(max_length = 500, null=True, blank=True)
+
+class SonstigesModel(models.Model):
+    sonstigesDok = models.TextField(max_length = 500, null=True, blank=True)
+
+class GitHubModel(models.Model):
+    githubDok = models.TextField(max_length = 500, null=True, blank=True)
