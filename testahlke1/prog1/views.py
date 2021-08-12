@@ -1,21 +1,20 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from prog1.forms import Person, ArtikelForm
-from prog1.models import PersonModel, Artikel
+from prog1.forms import Person, ArtikelForm, DokumentForm
+from prog1.models import PersonModel, Artikel, DokumentationModel
 import requests
 from prog1.api import CocktailApi
 from django.views.generic.list import ListView
 
 
-def home(request):
-    return HttpResponse("Hallo World")
-
 def test(request):
     context = {'name':'otto','alter':24}
     context["person_form"] = Person()
     context["artikel_form"] = ArtikelForm()
+    context["dokumentation_form"] = DokumentForm()
+
     return render(request, "prog1/test.html", context)
-#sdsdsd
+
 def createPerson(request):
     post_name = request.POST.get("name")
     post_alter = request.POST.get("alter")
@@ -26,9 +25,11 @@ def createPerson(request):
 def user_list(request):
     users = PersonModel.objects.all()
     filter_users = PersonModel.objects.filter(alter=10)
-    cocktails = CocktailApi()
-    context = {"users":users, "filtered":filter_users, "drink":cocktails.get_cocktails("margarita")}
+    #cocktails = CocktailApi()
+    context = {"users":users, "filtered":filter_users}
     return render(request, "prog1/db_table.html", context)
+
+# API , "drink":cocktails.get_cocktails("margarita")
 
 def artikel(request):
     new_artikel = ArtikelForm(request.POST, request.FILES)
@@ -43,3 +44,13 @@ def artikel(request):
 
 class ArtikelListView(ListView):
     model = Artikel
+
+def dokumentation(request):
+    new_dokumentation = DokumentForm(request.POST)
+    if new_dokumentation.is_valid():
+        value = new_dokumentation.cleaned_data
+        dok = Dokumentation(value)
+        dok.save()
+        return HttpResponse("Dokumentation wurde erstellt")
+    else:
+        return HttpResponse("Fehler" + str(new_dokumentation.errors))
