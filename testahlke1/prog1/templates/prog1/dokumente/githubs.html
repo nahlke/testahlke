@@ -1,10 +1,10 @@
 {% extends "index.html" %}
 {% block content %}
 <center>
-    <form action="github-dok" method="post">
-        {% csrf_token %}
-        {{ githubform.as_p }}
-        <button type="submit" class="btn btn-primary">Doku abschicken</button>
-    </form>
+    <ul>
+        {% for dok in githubform %}
+                <li>{{ dok.githubDok }}</li>
+        {% endfor %}
+    </ul>
 </center>
 {% endblock %}

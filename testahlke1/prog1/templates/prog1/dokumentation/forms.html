@@ -1,7 +1,7 @@
 {% extends "index.html" %}
 {% block content %}
 <center>
-    <form action="forms-dok" method="post">
+    <form action="post-forms" method="post">
         {% csrf_token %}
         {{ formsform.as_p }}
         <button type="submit" class="btn btn-primary">Doku abschicken</button>

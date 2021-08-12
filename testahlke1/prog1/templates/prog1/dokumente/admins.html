@@ -1,10 +1,10 @@
 {% extends "index.html" %}
 {% block content %}
 <center>
-    <form action="admin-dok" method="post">
-        {% csrf_token %}
-        {{ adminform.as_p }}
-        <button type="submit" class="btn btn-primary">Doku abschicken</button>
-    </form>
+    <ul>
+        {% for dok in adminform %}
+                <li>{{ dok.adminDok }}</li>
+        {% endfor %}
+    </ul>
 </center>
 {% endblock %}

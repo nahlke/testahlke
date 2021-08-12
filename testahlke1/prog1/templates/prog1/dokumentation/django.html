@@ -1,7 +1,7 @@
 {% extends "index.html" %}
 {% block content %}
 <center>
-    <form action="django-dok" method="post">
+    <form action="post-django" method="post">
         {% csrf_token %}
         {{ djangoform.as_p }}
         <button type="submit" class="btn btn-primary">Doku abschicken</button>

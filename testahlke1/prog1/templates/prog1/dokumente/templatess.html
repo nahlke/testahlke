@@ -1,10 +1,10 @@
 {% extends "index.html" %}
 {% block content %}
 <center>
-    <form action="templates-dok" method="post">
-        {% csrf_token %}
-        {{ templatesform.as_p }}
-        <button type="submit" class="btn btn-primary">Doku abschicken</button>
-    </form>
+    <ul>
+        {% for dok in templatesform %}
+                <li>{{ dok.templatesDok }}</li>
+        {% endfor %}
+    </ul>
 </center>
 {% endblock %}
