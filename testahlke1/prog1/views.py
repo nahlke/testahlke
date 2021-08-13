@@ -121,73 +121,73 @@ def sonstigesdok(request):
 
 
 def djangopost(request):
-    post_django = request.POST.get("djangoDok")
+    post_django = request.POST.get("djangoform")
     new_person = DjangoModel(djangoDok=post_django)
     new_person.save()
     return HttpResponse("Gespeichert")
 
 def modelspost(request):
-    post_models = request.POST.get("modelsDok")
+    post_models = request.POST.get("modelsform")
     new_person = ModelsModel(modelsDok=post_models)
     new_person.save()
     return HttpResponse("Gespeichert")
 
 def templatespost(request):
-    post_templates = request.POST.get("templatesDok")
+    post_templates = request.POST.get("templatesform")
     new_person = TemplatesModel(templatesDok=post_templates)
     new_person.save()
     return HttpResponse("Gespeichert")
 
 def adminpost(request):
-    post_admin = request.POST.get("adminDok")
+    post_admin = request.POST.get("adminform")
     new_person = AdminModel(adminDok=post_admin)
     new_person.save()
     return HttpResponse("Gespeichert")
 
 def apipost(request):
-    post_api = request.POST.get("apiDok")
+    post_api = request.POST.get("apiform")
     new_person = ApiModel(apiDok=post_api)
     new_person.save()
     return HttpResponse("Gespeichert")
 
 def formspost(request):
-    post_forms = request.POST.get("formsDok")
+    post_forms = request.POST.get("formsform")
     new_person = FormsModel(formsDok=post_forms)
     new_person.save()
     return HttpResponse("Gespeichert")
 
 def appurlpost(request):
-    post_appurl = request.POST.get("appurlDok")
+    post_appurl = request.POST.get("appurlform")
     new_person = AppUrlModel(appurlDok=post_appurl)
     new_person.save()
     return HttpResponse("Gespeichert")
 
 def viewspost(request):
-    post_views = request.POST.get("viewsDok")
+    post_views = request.POST.get("viewsform")
     new_person = ViewsModel(viewsDok=post_views)
     new_person.save()
     return HttpResponse("Gespeichert")
 
 def settingspost(request):
-    post_settings = request.POST.get("settingsDok")
+    post_settings = request.POST.get("settingsform")
     new_person = SettingsModel(settingsDok=post_settings)
     new_person.save()
     return HttpResponse("Gespeichert")
 
 def haupturlpost(request):
-    post_haupturl = request.POST.get("haupturlDok")
+    post_haupturl = request.POST.get("haupturlform")
     new_person = HauptUrlModel(haupturlDok=post_haupturl)
     new_person.save()
     return HttpResponse("Gespeichert")
 
 def githubpost(request):
-    post_github = request.POST.get("githubDok")
+    post_github = request.POST.get("githubform")
     new_person = GitHubModel(githubDok=post_github)
     new_person.save()
     return HttpResponse("Gespeichert")
 
 def sonstigespost(request):
-    post_sonstiges = request.POST.get("sonstigesDok")
+    post_sonstiges = request.POST.get("sonstigesform")
     new_person = SonstigesModel(sonstigesDok=post_sonstiges)
     new_person.save()
     return HttpResponse("Gespeichert")
