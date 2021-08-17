@@ -30,7 +30,7 @@ class FormsModel(models.Model):
     formsDok  = models.CharField(max_length = 500, null=True, blank=True)
 
 class AppUrlModel(models.Model):
-    appUrlDok  = models.CharField(max_length = 500, null=True, blank=True)
+    appurlDok  = models.CharField(max_length = 500, null=True, blank=True)
 
 class ViewsModel(models.Model):
     viewsDok  = models.CharField(max_length = 500, null=True, blank=True)
@@ -39,10 +39,13 @@ class SettingsModel(models.Model):
     settingsDok  = models.CharField(max_length = 500, null=True, blank=True)
 
 class HauptUrlModel(models.Model):
-    hauptUrlDok  = models.CharField(max_length = 500, null=True, blank=True)
+    haupturlDok  = models.CharField(max_length = 500, null=True, blank=True)
 
 class SonstigesModel(models.Model):
     sonstigesDok = models.CharField(max_length = 500, null=True, blank=True)
 
 class GitHubModel(models.Model):
     githubDok = models.CharField(max_length = 500, null=True, blank=True)
+
+class BefehleModel(models.Model):
+    befehleDok = models.CharField(max_length = 500, null=True, blank=True)

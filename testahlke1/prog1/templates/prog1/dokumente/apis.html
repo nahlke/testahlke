@@ -1,10 +1,15 @@
 {% extends "index.html" %}
 {% block content %}
 <center>
-    <ul>
-        {% for dok in apiform %}
-                <li>{{ dok.apiDok }}</li>
-        {% endfor %}
-    </ul>
+    <div class="card" style="width: 50rem;">
+      <div class="card-header">
+        Api.py
+      </div>
+      <ul class="list-group list-group-flush">
+          {% for dok in apiform %}
+            <li class="list-group-item">{{ dok.apiDok }}</li>
+          {% endfor %}
+      </ul>
+    </div>
 </center>
 {% endblock %}

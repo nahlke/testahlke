@@ -1,10 +1,15 @@
 {% extends "index.html" %}
 {% block content %}
 <center>
-    <ul>
-        {% for dok in appurlform %}
-                <li>{{ dok.appurlDok }}</li>
-        {% endfor %}
-    </ul>
+    <div class="card" style="width: 50rem;">
+      <div class="card-header">
+        AppUrl.py
+      </div>
+      <ul class="list-group list-group-flush">
+          {% for dok in appurlform %}
+            <li class="list-group-item">{{ dok.appurlDok }}</li>
+          {% endfor %}
+      </ul>
+    </div>
 </center>
 {% endblock %}

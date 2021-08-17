@@ -1,10 +1,15 @@
 {% extends "index.html" %}
 {% block content %}
 <center>
-    <ul>
-        {% for dok in githubform %}
-                <li>{{ dok.githubDok }}</li>
-        {% endfor %}
-    </ul>
+    <div class="card" style="width: 50rem;">
+      <div class="card-header">
+        GitHub
+      </div>
+      <ul class="list-group list-group-flush">
+          {% for dok in githubform %}
+            <li class="list-group-item">{{ dok.githubDok }}</li>
+          {% endfor %}
+      </ul>
+    </div>
 </center>
 {% endblock %}

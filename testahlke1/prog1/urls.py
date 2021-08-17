@@ -10,7 +10,6 @@ urlpatterns = [
     path('artikel-list', views.ArtikelListView.as_view(), name="artikel-list"),
     path('dokumentieren', views.dok, name="dokumentieren"),
     path('dokumentationen', views.doks, name="dokumentationen"),
-    #path('setdokumentation', views.setdokumentation, name="setdokumentation"),
 
     path('django-dok', views.djangodok, name='django-dok'),
     path('models-dok', views.modelsdok, name='models-dok'),
@@ -24,6 +23,7 @@ urlpatterns = [
     path('haupturl-dok', views.haupturldok, name='haupturl-dok'),
     path('github-dok', views.githubdok, name='github-dok'),
     path('sonstiges-dok', views.sonstigesdok, name='sonstiges-dok'),
+    path('befehle-dok', views.befehledok, name='befehle-dok'),
 
     path('django-doks', views.djangodoks, name='django-doks'),
     path('models-doks', views.modelsdoks, name='models-doks'),
@@ -37,6 +37,7 @@ urlpatterns = [
     path('haupturl-doks', views.haupturldoks, name='haupturl-doks'),
     path('github-doks', views.githubdoks, name='github-doks'),
     path('sonstiges-doks', views.sonstigesdoks, name='sonstiges-doks'),
+    path('befehle-doks', views.befehledoks, name='befehle-doks'),
 
     path('post-django', views.djangopost, name='post-django'),
     path('post-models', views.modelspost, name='post-models'),
@@ -50,5 +51,6 @@ urlpatterns = [
     path('post-haupturl', views.haupturlpost, name='post-haupturl'),
     path('post-github', views.githubpost, name='post-github'),
     path('post-sonstiges', views.sonstigespost, name='post-sonstiges'),
+    path('post-befehle', views.befehlepost, name='post-befehle'),
 
 ]

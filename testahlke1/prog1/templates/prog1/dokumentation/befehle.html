@@ -1,0 +1,10 @@
+{% extends "index.html" %}
+{% block content %}
+<center>
+    <form action="post-befehle" method="post">
+        {% csrf_token %}
+        {{ befehleform.as_p }}
+        <button type="submit" class="btn btn-primary">Doku abschicken</button>
+    </form>
+</center>
+{% endblock %}

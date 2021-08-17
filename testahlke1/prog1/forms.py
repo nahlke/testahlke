@@ -47,3 +47,6 @@ class GitHubForm(forms.Form):
 
 class SonstigesForm(forms.Form):
     sonstigesform = forms.CharField(label='SonstigesDok', max_length = 500)
+
+class BefehleForm(forms.Form):
+    befehleform = forms.CharField(label='BefehleDok', max_length=500)

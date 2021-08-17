@@ -1,9 +1,9 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from prog1.forms import Person, ArtikelForm, DjangoForm, ModelsForm, TemplatesForm, AdminForm, ApiForm, FormsForm,\
-    AppUrlForm, ViewsForm, SettingsForm, HauptUrlForm, GitHubForm, SonstigesForm
+    AppUrlForm, ViewsForm, SettingsForm, HauptUrlForm, GitHubForm, SonstigesForm, BefehleForm
 from prog1.models import PersonModel, Artikel, DjangoModel, ModelsModel, TemplatesModel, AdminModel, ApiModel, FormsModel,\
-    AppUrlModel, ViewsModel, SettingsModel, HauptUrlModel, GitHubModel, SonstigesModel
+    AppUrlModel, ViewsModel, SettingsModel, HauptUrlModel, GitHubModel, SonstigesModel, BefehleModel
 import requests
 from prog1.api import CocktailApi
 from django.views.generic.list import ListView
@@ -116,26 +116,29 @@ def sonstigesdok(request):
     context["sonstigesform"] = SonstigesForm()
     return render(request, "prog1/dokumentation/sonstiges.html", context)
 
-
+def befehledok(request):
+    context = {'name': 'otto'}
+    context["befehleform"] = BefehleForm()
+    return render(request, "prog1/dokumentation/befehle.html", context)
 
 
 
 def djangopost(request):
     post_django = request.POST.get("djangoform")
-    new_person = DjangoModel(djangoDok=post_django)
-    new_person.save()
+    new_django = DjangoModel(djangoDok=post_django)
+    new_django.save()
     return HttpResponse("Gespeichert")
 
 def modelspost(request):
     post_models = request.POST.get("modelsform")
-    new_person = ModelsModel(modelsDok=post_models)
-    new_person.save()
+    new_models = ModelsModel(modelsDok=post_models)
+    new_models.save()
     return HttpResponse("Gespeichert")
 
 def templatespost(request):
     post_templates = request.POST.get("templatesform")
-    new_person = TemplatesModel(templatesDok=post_templates)
-    new_person.save()
+    new_templates = TemplatesModel(templatesDok=post_templates)
+    new_templates.save()
     return HttpResponse("Gespeichert")
 
 def adminpost(request):
@@ -192,69 +195,77 @@ def sonstigespost(request):
     new_person.save()
     return HttpResponse("Gespeichert")
 
+def befehlepost(request):
+    post_befehle = request.POST.get("befehleform")
+    new_person = BefehleModel(befehleDok=post_befehle)
+    new_person.save()
+    return HttpResponse("Gespeichert")
+
 
 
 def djangodoks(request):
     django = DjangoModel.objects.all()
     context = {"djangoform": django}
-    print(django)
     return render(request, "prog1/dokumente/djangos.html", context)
 
 def modelsdoks(request):
-    admin = DjangoModel.objects.all()
-    context = {"modelsform": admin}
+    models = ModelsModel.objects.all()
+    context = {"modelsform": models}
     return render(request, "prog1/dokumente/modelss.html", context)
 
 def templatesdoks(request):
-    admin = DjangoModel.objects.all()
-    context = {"templatesform": admin}
+    templates = TemplatesModel.objects.all()
+    context = {"templatesform": templates}
     return render(request, "prog1/dokumente/templatess.html", context)
 
 def admindoks(request):
-    admin = DjangoModel.objects.all()
+    admin = AdminModel.objects.all()
     context = {"adminform": admin}
     return render(request, "prog1/dokumente/admins.html", context)
 
 def apidoks(request):
-    admin = DjangoModel.objects.all()
-    context = {"apiform": admin}
+    api = ApiModel.objects.all()
+    context = {"apiform": api}
     return render(request, "prog1/dokumente/apis.html", context)
 
 def formsdoks(request):
-    admin = DjangoModel.objects.all()
-    context = {"formsform": admin}
+    forms = FormsModel.objects.all()
+    context = {"formsform": forms}
     return render(request, "prog1/dokumente/formss.html", context)
 
 def appurldoks(request):
-    admin = DjangoModel.objects.all()
-    context = {"appurlform": admin}
+    appurl = AppUrlModel.objects.all()
+    context = {"appurlform": appurl}
     return render(request, "prog1/dokumente/appurls.html", context)
 
 def viewsdoks(request):
-    admin = DjangoModel.objects.all()
-    context = {"viewsform": admin}
+    views = ViewsModel.objects.all()
+    context = {"viewsform": views}
     return render(request, "prog1/dokumente/viewss.html", context)
 
 def settingsdoks(request):
-    admin = DjangoModel.objects.all()
-    context = {"settingsform": admin}
+    settings = SettingsModel.objects.all()
+    context = {"settingsform": settings}
     return render(request, "prog1/dokumente/settingss.html", context)
 
 def haupturldoks(request):
-    admin = DjangoModel.objects.all()
-    context = {"haupturlform": admin}
+    haupturl = HauptUrlModel.objects.all()
+    context = {"haupturlform": haupturl}
     return render(request, "prog1/dokumente/haupturls.html", context)
 
 def githubdoks(request):
-    admin = DjangoModel.objects.all()
-    context = {"githubform": admin}
+    github = GitHubModel.objects.all()
+    context = {"githubform": github}
     return render(request, "prog1/dokumente/githubs.html", context)
 
 def sonstigesdoks(request):
-    admin = DjangoModel.objects.all()
-    context = {"sonstigesform": admin}
+    sonstiges = SonstigesModel.objects.all()
+    context = {"sonstigesform": sonstiges}
     return render(request, "prog1/dokumente/sonstigess.html", context)
 
-
+def befehledoks(request):
+    sonstiges = BefehleModel.objects.all()
+    context = {"befehleform": sonstiges}
+    return render(request, "prog1/dokumente/befehles.html", context)
 
 

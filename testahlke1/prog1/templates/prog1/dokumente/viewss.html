@@ -1,10 +1,15 @@
 {% extends "index.html" %}
 {% block content %}
 <center>
-    <ul>
-        {% for dok in viewsform %}
-                <li>{{ dok.viewsDok }}</li>
-        {% endfor %}
-    </ul>
+    <div class="card" style="width: 50rem;">
+      <div class="card-header">
+        Views.py
+      </div>
+      <ul class="list-group list-group-flush">
+          {% for dok in viewsform %}
+            <li class="list-group-item">{{ dok.viewsDok }}</li>
+          {% endfor %}
+      </ul>
+    </div>
 </center>
 {% endblock %}
